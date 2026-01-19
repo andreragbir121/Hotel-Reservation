@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookIt - Hotel Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="program">
+    <!-- Main Menu -->
+    <section id="main-menu">
+        <div class="menu-btn">
+            <button class="menu-button" onclick="showSection('checkin')">Check-In</button>
+            <button class="menu-button" onclick="showSection('checkout')">Check-Out</button>
+        </div>
+        <div class="menu-txt">
+            <h2>Welcome to BookIt Hotel Reservation</h2>
+        </div>
+        <div class="menu-btn">
+            <button class="menu-button" onclick="showSection('bookedRooms')">Booked Rooms</button>
+            <button class="menu-button" onclick="exit()">Exit</button>
+        </div>
+    </section>
+
+    <!-- Check-In Section -->
+    <section id="checkin" class="hidden">
+        <h2>Check-In</h2>
+        <p class="instruction">Please enter your name and select a room.</p>
+        <div id="roomOptions"></div>
+        
+        <input type="text" id="guestName" placeholder="Enter your name">
+        <button onclick="CheckIn()">Book Room</button>
+        <button onclick="menu()">Back</button>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="hidden">
+        <h2>Checkout</h2>
+        <p class="instruction">Please enter your name to checkout and view your total owing.</p>
+        <input type="text" id="checkoutName" placeholder="Enter your name">
+        <button onclick="checkout()">Confirm Checkout</button>
+        <button onclick="menu()">Back</button>
+    </section>
+
+    <!-- Display Bookings -->
+    <section id="bookedRooms" class="hidden">
+        <h2>Booked Rooms</h2>
+        <div id="bookingsList"></div>
+        <button onclick="menu()">Back</button>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
